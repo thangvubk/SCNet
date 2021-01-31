@@ -2,24 +2,19 @@
 
 ## Introduction
 
-[ALGORITHM]
-
 We provide the code for reproducing experiment results of [SCNet](https://arxiv.org/abs/2012.10150).
 
 ## Highlight:
 - SCNet addresses the limitation in training-inference sample distribution mismatch of existing cascade method for instance segmentation.
 - SCNet strengen the relationship between subtasks: classification, detection and segmentation.
 - **State-of-the-art**: without bell and whistle, SCNet achieves 44.7 box AP and 42.3 mask AP on ResNext-101. This can be further improved with well-known plugins and tricks, such as Group Norm, DCN, multi-scale training/testing.
-- **Fast training and testing**: SCNet achieves better performancce while training/inference faster and requires less memory compared to [Cascade Mask R-CNN]() and [HTC]().
+- **Fast training and testing**: SCNet achieves better performancce while training/inference faster and requires less memory compared to [Cascade Mask R-CNN](https://github.com/thangvubk/SCNet/tree/master/configs/cascade_rcnn) and [HTC](https://github.com/thangvubk/SCNet/tree/master/configs/htc). See comparison below.
 
-```
-@inproceedings{vu2019cascade,
-  title={SCNet: Training Inference Sample Consistency for Instance Segmentation},
-  author={Vu, Thang and Haeyong, Kang and Yoo, Chang D},
-  booktitle={AAAI},
-  year={2021}
-}
-```
+<p align="center">
+    <img src="https://github.com/thangvubk/SCNet/blob/master/docs/Compare.png">
+</p> 
+
+
 
 ## Dataset
 
@@ -55,4 +50,17 @@ The results on COCO 2017val are shown in the below table. (results on test-dev a
 
 - Training hyper-parameters are identical to those of [HTC](https://github.com/open-mmlab/mmdetection/tree/master/configs/htc).
 - TTA means Test Time Augmentation, which applies horizonal flip and multi-scale testing. Refer to [config](https://github.com/open-mmlab/mmdetection/tree/master/configs/scnet/scnet_r50_fpn_1x_coco.py).
+
+## Citation
+
+If you find our work helpful for your research. Please cite our paper.
+
+```
+@inproceedings{vu2019cascade,
+  title={SCNet: Training Inference Sample Consistency for Instance Segmentation},
+  author={Vu, Thang and Haeyong, Kang and Yoo, Chang D},
+  booktitle={AAAI},
+  year={2021}
+}
+```
 
